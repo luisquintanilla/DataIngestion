@@ -1,4 +1,11 @@
-﻿using System.ClientModel;
+﻿#:package Microsoft.Extensions.AI.OpenAI@10.0.1-preview.1.25571.5
+#:package Microsoft.Extensions.DataIngestion@10.0.1-preview.1.25571.5
+#:package Microsoft.Extensions.DataIngestion.Markdig@10.0.1-preview.1.25571.5
+#:package Microsoft.Extensions.Logging.Console@10.0.0
+#:package Microsoft.ML.Tokenizers.Data.Cl100kBase@2.0.0
+#:package Microsoft.SemanticKernel.Connectors.SqliteVec@1.67.1-preview
+
+using System.ClientModel;
 using System.Numerics;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.DataIngestion;

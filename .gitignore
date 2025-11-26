@@ -3,6 +3,9 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# Vector DB
+vectors.db
+
 # dotenv files
 .env
 
