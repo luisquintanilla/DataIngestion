@@ -1,6 +1,8 @@
 # DataIngestion - RAG Pipeline Example
 
-A .NET 10 console application demonstrating a complete Retrieval-Augmented Generation (RAG) pipeline using Microsoft Extensions for AI and Data Ingestion.
+[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/luisquintanilla/DataIngestion)
+
+A .NET 10 [file-based program](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/file-based-programs) demonstrating a complete Retrieval-Augmented Generation (RAG) pipeline using Microsoft Extensions for AI and Data Ingestion.
 
 ## Overview
 
@@ -21,21 +23,21 @@ This project showcases how to build an end-to-end data ingestion pipeline that:
 - **Vector Storage**: SQLite-based vector database for efficient similarity search
 - **Interactive Q&A**: Query the ingested documents using natural language
 
-## Prerequisites
-
-- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
-- GitHub Personal Access Token (for accessing GitHub Models)
-
 ## Setup
 
-1. **Set the GitHub Token Environment Variable**:
+### Option 1: Dev Container (Recommended)
+
+Click the "Open in Dev Containers" badge above to open this project in a pre-configured development environment with all dependencies installed.
+
+### Option 2: Local Setup
+
+1. **Prerequisites**:
+   - [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
+   - GitHub Personal Access Token (for accessing GitHub Models)
+
+2. **Set the GitHub Token Environment Variable**:
    ```powershell
    $env:GITHUB_TOKEN = "your_github_token_here"
-   ```
-
-2. **Restore Dependencies**:
-   ```powershell
-   dotnet restore
    ```
 
 3. **Add Your Documents**:
@@ -44,8 +46,10 @@ This project showcases how to build an end-to-end data ingestion pipeline that:
 ## Running the Application
 
 ```powershell
-dotnet run
+dotnet run DataIngestion.cs
 ```
+
+> **Note**: As a [file-based program](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/file-based-programs), this application doesn't require a project file. Dependencies are specified directly in the source file using `#:package` directives and are automatically resolved at runtime.
 
 The application will:
 1. Process all `.md` files in the `./data` directory
@@ -92,21 +96,26 @@ Markdown Files → Document Reader → Image Enricher → Semantic Chunker → S
 
 ```
 DataIngestion/
-├── Program.cs              # Main pipeline implementation
-├── DataIngestion.csproj    # Project dependencies
+├── .devcontainer/          # Dev Container configuration
+│   └── devcontainer.json
+├── DataIngestion.cs        # Main file-based program with embedded dependencies
 ├── data/                   # Input documents directory
 │   └── Data-Ingestion-Primer.md
-└── vectors.db              # Generated SQLite vector database
+└── vectors.db              # Generated SQLite vector database (created at runtime)
 ```
 
 ## Dependencies
 
-- **Microsoft.Extensions.AI.OpenAI** (10.1.0-preview.1.25574.1)
-- **Microsoft.Extensions.DataIngestion** (10.1.0-preview.1.25574.1)
-- **Microsoft.Extensions.DataIngestion.Markdig** (10.1.0-preview.1.25574.1)
-- **Microsoft.Extensions.Logging.Console** (10.0.0)
-- **Microsoft.ML.Tokenizers.Data.Cl100kBase** (2.0.0)
-- **Microsoft.SemanticKernel.Connectors.SqliteVec** (1.67.1-preview)
+Dependencies are declared using `#:package` directives at the top of `DataIngestion.cs`:
+
+```csharp
+#:package Microsoft.Extensions.AI.OpenAI@10.0.1-preview.1.25571.5
+#:package Microsoft.Extensions.DataIngestion@10.0.1-preview.1.25571.5
+#:package Microsoft.Extensions.DataIngestion.Markdig@10.0.1-preview.1.25571.5
+#:package Microsoft.Extensions.Logging.Console@10.0.0
+#:package Microsoft.ML.Tokenizers.Data.Cl100kBase@2.0.0
+#:package Microsoft.SemanticKernel.Connectors.SqliteVec@1.67.1-preview
+```
 
 ## Configuration
 
