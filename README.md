@@ -1,5 +1,7 @@
 # DataIngestion - RAG Pipeline Example
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/luisquintanilla/DataIngestion)
+
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/luisquintanilla/DataIngestion)
 
 A .NET 10 [file-based program](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/file-based-programs) demonstrating a complete Retrieval-Augmented Generation (RAG) pipeline using Microsoft Extensions for AI and Data Ingestion.
