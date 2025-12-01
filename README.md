@@ -89,7 +89,7 @@ Markdown Files → Document Reader → Image Enricher → Semantic Chunker → S
 
 1. **MarkdownReader**: Parses Markdown documents
 2. **ImageAlternativeTextEnricher**: Adds AI-generated descriptions for images
-3. **SemanticSimilarityChunker**: Splits text into ~2000 token chunks using semantic boundaries
+3. **SemanticSimilarityChunker**: Splits text into token chunks using semantic boundaries
 4. **SummaryEnricher**: Generates summaries for each chunk
 5. **VectorStoreWriter**: Stores chunks with embeddings in SQLite
 
