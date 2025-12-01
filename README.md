@@ -67,11 +67,14 @@ The application will:
 After ingestion completes, enter questions at the prompt:
 
 ```
-Enter your question (or 'exit' to quit): What is RAG?
+Enter your question (or 'exit' to quit): How do I prepare data for RAG?
 Searching...
 
-Score: 0.89
-    Content: Retrieval-Augmented Generation (RAG) extends LLMs by letting them look up information...
+Score: 0.39424318075180054
+        Content: ### Example C# Extraction Snippet
+## 4.2 Transformation  
+Normalize, clean, or convert content into a structured form suitable for retrieval or embedding.
+Common steps:...
 ```
 
 Type `exit` to quit the application.
