@@ -27,9 +27,11 @@ This project showcases how to build an end-to-end data ingestion pipeline that:
 
 ## Setup
 
-### Option 1: Dev Container (Recommended)
+### Option 1: GitHub Codespaces (Recommended)
 
-Click the "Open in Dev Containers" badge above to open this project in a pre-configured development environment with all dependencies installed.
+Click the "Open in GitHub Codespaces" badge to open this project in a pre-configured development environment with all dependencies installed.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/luisquintanilla/DataIngestion)
 
 ### Option 2: Local Setup
 
